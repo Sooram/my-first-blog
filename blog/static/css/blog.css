@@ -68,3 +68,7 @@ a.more-button:link, a.more-button:visited {
 a.more-button:hover, a.more-button:active {
     background-color: #B3B5B5;
 }
+
+#to-profile {
+    margin-right: 20px;
+}
