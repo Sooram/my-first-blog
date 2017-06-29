@@ -1,41 +1,5 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-	{% for post in posts %}
-  	<!-- Blog entry -->
-  	<div class="w3-card-4 w3-margin w3-white">
-  		<img src=" {{ post.image }} " style="width:100%">
-   		<div class="w3-container">
-        
-        <div class="date">
-            {{ post.published_date }}
-        </div>
 
-        <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-
-        <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <!-- <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a href="{% url 'post_detail' pk=post.pk %}">READ MORE »</a></b></button></p> -->
-          <p><b><a href="{% url 'post_detail' pk=post.pk %}" class="more-button">READ MORE »</a></b></p>
-        </div>
-        </div>
-
-        <div>
-          {% load staticfiles %}
-          <p>
-          <img src="{% static 'images/folder1600.png' %}" alt="Categories" style="width:2%">&nbsp; {{ post.categories.all|join:", " }} &nbsp;&nbsp; 
-          <img src="{% static 'images/Tag.png' %}" alt="Tags" style="width:2%">&nbsp; {{ post.tags.all|join:", " }} &nbsp;&nbsp;         
-          <img src="{% static 'images/Message-512.png' %}" alt="Comments" style="width:2%">&nbsp; 0         
-          </p>
-        </div>
-     
-      </div>
-	</div>
-
-	{% endfor %}
-<!-- END BLOG ENTRIES -->
-</div>
 {% endblock %}
